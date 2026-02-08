@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Aryan Verma | AI Engineer</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* FULLSCREEN HERO */
+.carousel-item{
+height:100vh;
+min-height:100vh;
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+position:relative;
+}
+
+/* DARK OVERLAY */
+.carousel-item::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(10,25,47,0.65);
+z-index:1;
+}
+
+/* TEXT CONTENT */
+.hero-content{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+z-index:2;
+color:white;
+}
+
+.hero-content h1{
+font-size:60px;
+font-weight:bold;
+}
+
+.hero-content h3{
+color:#64ffda;
+margin-top:15px;
+}
+
+.hero-content p{
+margin-top:20px;
+font-size:18px;
+max-width:500px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+<!-- CENTERED NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top glass">
+
+<div class="container">
+
+<button class="navbar-toggler mx-auto"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#nav">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse justify-content-center" id="nav">
+
+<ul class="navbar-nav text-center">
+
+<li class="nav-item">
+<a class="nav-link px-4" href="#about">About</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link px-4" href="#skills">Skills</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link px-4" href="#experience">Experience</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link px-4" href="#projects">Projects</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link px-4" href="#publications">Publications</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link px-4" href="#contact">Contact</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- HERO CAROUSEL -->
+<div id="heroCarousel" class="carousel slide carousel-fade"
+data-bs-ride="carousel"
+data-bs-interval="4000">
+
+
+<div class="carousel-inner">
+
+
+<!-- SLIDE 1 -->
+<div class="carousel-item active"
+style="background-image:url('me_again.png')">
+
+<div class="container hero-content">
+
+<h1>Hi, I'm Aryan Verma</h1>
+
+<h3>AI Engineer | Solo Traveller | Space Explorer</h3>
+
+<p>
+Building scalable AI systems powered by real-time data and cloud.
+</p>
+
+<a href="https://github.com/YOUR_USERNAME"
+class="btn btn-primary mt-3">
+
+<i class="bi bi-github"></i> View GitHub
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- SLIDE 2 -->
+<div class="carousel-item"
+style="background-image:url('next_gen_ai.png')">
+
+<div class="container hero-content">
+
+<h1>Welcome to Next Generation AI Worlds</h1>
+
+<p>
+Building intelligent systems that redefine industries.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- SLIDE 3 -->
+<div class="carousel-item"
+style="background-image:url('wolf.jpg')">
+
+<div class="container hero-content">
+
+<h1>Let's Bring Value to the Business</h1>
+
+<p>
+Transforming raw data into measurable business intelligence.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- CONTROLS -->
+<button class="carousel-control-prev"
+type="button"
+data-bs-target="#heroCarousel"
+data-bs-slide="prev">
+
+<span class="carousel-control-prev-icon"></span>
+
+</button>
+
+
+<button class="carousel-control-next"
+type="button"
+data-bs-target="#heroCarousel"
+data-bs-slide="next">
+
+<span class="carousel-control-next-icon"></span>
+
+</button>
+
+</div>
+
+
+
+<!-- ABOUT -->
+<section id="about" class="section">
+
+<div class="container">
+
+<h2 class="section-title">About Me</h2>
+
+<p class="section-text">
+
+I am an AI Engineer specializing in designing and deploying real-time, scalable
+ AI systems powered by cloud-native and distributed architectures. 
+ My expertise spans multimodal AI, large language models, and intelligent
+  data pipelines built for production environments. I focus on transforming complex, 
+  high-volume data into actionable intelligence that drives measurable business outcomes. 
+  With hands-on experience in end-to-end system development, I build robust, efficient, 
+  and reliable AI solutions that operate effectively under real-world constraints.
+   My work is driven by the goal of delivering high-performance AI systems that create 
+   tangible value and operational advantage.
+</p>
+
+</div>
+
+</section>
+<section id="skills" class="section"></section>
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-slider">
+
+<div class="skills-track track-left">
+
+<!-- ORIGINAL SET -->
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+<span>Python</span>
+</div>
+
+<div class="skill-item">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg">
+<span>Matplotlib</span>
+</div>
+
+<div class="skill-item">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg">
+<span>Scikit-learn</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg">
+<span>Pandas</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg">
+<span>NumPy</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg">
+<span>TensorFlow</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg">
+<span>PyTorch</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
+<span>Docker</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+<span>Git</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/microsoft/PowerBI-Icons@main/SVG/Power-BI.svg">
+<span>Power BI</span>
+</div>
+
+
+<!-- DUPLICATE SAME SET AGAIN (REQUIRED FOR LOOP) -->
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+<span>Python</span>
+</div>
+
+<div class="skill-item">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg">
+<span>Matplotlib</span>
+</div>
+
+<div class="skill-item">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg">
+<span>Scikit-learn</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg">
+<span>Pandas</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg">
+<span>NumPy</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg">
+<span>TensorFlow</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg">
+<span>PyTorch</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
+<span>Docker</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+<span>Git</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/microsoft/PowerBI-Icons@main/SVG/Power-BI.svg">
+<span>Power BI</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- ROW 2 -->
+<div class="skills-slider mt-4">
+
+<div class="skills-track track-right">
+
+<!-- ORIGINAL SET -->
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg">
+<span>Kafka</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg">
+<span>PySpark</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg">
+<span>FastAPI</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+<span>MySQL</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+<span>MongoDB</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg">
+<span>Apache</span>
+</div>
+
+<div class="skill-item">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg">
+<span>OpenAI</span>
+</div>
+
+<div class="skill-item">
+<img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg">
+<span>HuggingFace</span>
+</div>
+
+<div class="skill-item">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/NLTK_logo.png">
+<span>NLP</span>
+</div>
+
+<div class="skill-item">
+<img src="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/langchain.png">
+<span>LangChain</span>
+</div>
+
+
+<!-- DUPLICATE SAME SET AGAIN FOR LOOP -->
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg">
+<span>Kafka</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg">
+<span>PySpark</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg">
+<span>FastAPI</span>
+</div>
+
+<div class="skill-item">
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/de/AirflowLogo.png">
+<span>Airflow</span>
+</div>
+
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+<span>MySQL</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+<span>MongoDB</span>
+</div>
+
+<div class="skill-item">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg">
+<span>Apache</span>
+</div>
+
+<div class="skill-item">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg">
+<span>OpenAI</span>
+</div>
+
+<div class="skill-item">
+<img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg">
+<span>HuggingFace</span>
+</div>
+
+<div class="skill-item">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/NLTK_logo.png">
+<span>NLP</span>
+</div>
+
+<div class="skill-item">
+<img src="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/langchain.png">
+<span>LangChain</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- EXPERIENCE SECTION -->
+<section id="experience" class="section">
+
+<div class="container">
+
+<h2 class="section-title text-center mb-5">Experience</h2>
+
+<div class="row justify-content-center">
+
+
+<!-- Tardid -->
+<div class="col-md-8 mb-4">
+
+<div class="experience-card d-flex align-items-center">
+
+<img src="Tardid_logo.jpg" class="experience-logo">
+
+<div class="ms-4">
+
+<h5 class="mb-1">AI Engineer</h5>
+
+<p class="mb-1 text-info">Tardid Technologies Pvt Ltd</p>
+
+<p class="experience-date mb-0">28 May 2024 – Present</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Oasis -->
+<div class="col-md-8 mb-4">
+
+<div class="experience-card d-flex align-items-center">
+
+<img src="oasis_infobyte_logo.jpg" class="experience-logo">
+
+<div class="ms-4">
+
+<h5 class="mb-1">Data Scientist Intern</h5>
+
+<p class="mb-1 text-info">Oasis Infobyte</p>
+
+<p class="experience-date mb-0">15 Nov 2023 – 15 Dec 2023</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="section">
+
+<div class="container">
+
+<h2 class="section-title text-center mb-5">Projects</h2>
+
+<div class="row">
+
+
+<div class="col-md-4 mb-4">
+<div class="project-card">
+
+<img src="p1.png" class="project-img">
+
+<h5 class="mt-3">Hazard Asteroid Intelligence Pipeline</h5>
+
+<p class="project-desc">
+</p>
+
+</div>
+</div>
+
+
+<!-- PROJECT 2 -->
+<div class="col-md-4 mb-4">
+<div class="project-card">
+
+<img src="p2.png" class="project-img">
+
+<h5 class="mt-3">Autonomous Cyber Threat Hunter</h5>
+
+<p class="project-desc">
+</p>
+
+</div>
+</div>
+
+
+<!-- PROJECT 3 -->
+<div class="col-md-4 mb-4">
+<div class="project-card">
+
+<img src="p3.png" class="project-img">
+
+<h5 class="mt-3">Particle-Based Causal AI with Confidence-Driven Decision Intelligence</h5>
+
+<p class="project-desc">
+</p>
+
+</div>
+</div>
+
+
+<!-- PROJECT 4 -->
+<div class="col-md-4 mb-4">
+<div class="project-card">
+
+<img src="p4.png" class="project-img">
+
+<h5 class="mt-3">AURA – Autonomous User Response Assistant</h5>
+
+<p class="project-desc">
+</p>
+
+</div>
+</div>
+
+
+<!-- PROJECT 5 -->
+<div class="col-md-4 mb-4">
+<div class="project-card">
+
+<img src="p5.png" class="project-img">
+
+<h5 class="mt-3">HealthCare ChatBot</h5>
+
+<p class="project-desc">
+</p>
+
+</div>
+</div>
+
+
+<!-- PROJECT 6 -->
+<div class="col-md-4 mb-4">
+<div class="project-card">
+
+<img src="p6.png" class="project-img">
+
+<h5 class="mt-3">Movie Recommender System</h5>
+
+<p class="project-desc">
+</p>
+
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PUBLICATIONS SECTION -->
+<section id="publications" class="section">
+
+<div class="container">
+
+<h2 class="section-title text-center mb-5">Publications</h2>
+
+<div class="row">
+
+
+<!-- PUBLICATION 1 -->
+<div class="col-md-6 mb-4">
+
+<div class="publication-card">
+
+<h5 class="publication-title">
+Replacing Human Workers with Robots in Hazardous and Deadly Chemical Factory Environments
+</h5>
+
+<p class="publication-abstract">
+
+The dangerous chemical factory environment poses risks of toxic exposure, extreme thermal conditions, volatile reactions, and invisible airborne hazards to human labor. This paper describes an AI-based robotic system framework to replace human labor in high-risk industrial environments by facilitating safe and reliable autonomous operations under highly constrained and unpredictable conditions.
+
+A real-time sensor fusion system with vision, gas, and proximity sensors improves situational awareness to monitor toxic leaks and dynamic hazards in real-time, facilitating adaptive and safe autonomous operation.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- PUBLICATION 2 -->
+<div class="col-md-6 mb-4">
+
+<div class="publication-card">
+
+<h5 class="publication-title">
+Smart Disaster Alert System Powered by Retrieval-Augmented Large Language Models and Real-Time Intelligence Pipelines
+</h5>
+
+<p class="publication-abstract">
+
+This paper proposes a Smart Disaster Alert System that incorporates Retrieval-Augmented Generation (RAG) and Large Language Model (LLM) designs to provide smart, real-time detection and notification of disasters.
+
+The framework utilizes Apache Kafka, PySpark, and AWS S3 for real-time data processing. Integration of RAG search with LLM summarization enables extraction of situational insights and delivery of context-aware alerts, achieving a 40% reduction in response time.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+ <!-- CONTACT SECTION -->
+<section id="contact" class="section text-center">
+
+<div class="container">
+
+<h2 class="section-title mb-4">Contact</h2>
+
+<p class="mb-4" style="color:#8892b0;">
+Feel free to reach out for collaborations, opportunities, or discussions.
+</p>
+
+<!-- EMAIL -->
+<a href="mailto:aryanv7717@gmail.com"
+class="btn btn-primary m-2">
+
+<i class="bi bi-envelope-fill"></i>
+aryanv7717@gmail.com
+
+</a>
+
+<!-- GITHUB -->
+<a href="https://github.com/ARYANVERMA893"
+class="btn btn-outline-info m-2"
+target="_blank">
+
+<i class="bi bi-github"></i>
+GitHub
+
+</a>
+
+<!-- LINKEDIN -->
+<a href="https://www.linkedin.com/in/aryan-verma-367190203/"
+class="btn btn-outline-light m-2"
+target="_blank">
+
+<i class="bi bi-linkedin"></i>
+LinkedIn
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<footer class="footer">
+© 2026 Aryan Verma | AI Engineer
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
