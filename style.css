@@ -523,3 +523,20 @@ font-size:14px;
 line-height:1.6;
 
 }
+.carousel-item{
+    height:100vh;
+    min-height:100vh;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    position:relative;
+    z-index:1;   /* add here */
+}
+
+.hero-content{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:10;   /* increase this */
+    color:white;
+}
