@@ -1,837 +1,825 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aryan Verma — AI Engineer</title>
 
-<title>Aryan Verma | AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<!-- Bootstrap 5 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
 
 <style>
 
-/* FULLSCREEN HERO */
-.carousel-item{
-height:100vh;
-min-height:100vh;
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-position:relative;
+/* ===== TOKENS ===== */
+:root{
+  --bg:            #1B1D21;
+  --bg-raised:     #222429;
+  --bg-raised-2:   #282B31;
+  --line:          #383B42;
+  --line-soft:     #2B2E34;
+  --text:          #E7E5E0;
+  --text-muted:    #A3A6AC;
+  --text-faint:    #6E7178;
+  --accent:        #7C8B99;
+  --accent-dim:    #566068;
+  --grey-accent:   #9C948A;
+
+  --serif: 'Fraunces', Georgia, serif;
+  --sans:  'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
+  --mono:  'IBM Plex Mono', ui-monospace, monospace;
 }
 
-/* DARK OVERLAY */
-.carousel-item::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(10,25,47,0.65);
-z-index:1;
+*{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-weight:400;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
 }
 
-/* TEXT CONTENT */
-.hero-content{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-z-index:2;
-color:white;
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation:none !important; transition:none !important;}
 }
 
-.hero-content h1{
-font-size:60px;
-font-weight:bold;
+a{color:inherit; text-decoration:none;}
+a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+
+h1,h2,h3,h4{font-family:var(--serif); font-weight:600; margin:0;}
+
+.container{max-width:1180px;}
+
+.hairline{border-top:1px solid var(--line);}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  background:rgba(27,29,33,0.84);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-soft);
+  padding:18px 0;
+}
+.brand{
+  font-family:var(--mono);
+  font-size:15px;
+  letter-spacing:0.02em;
+  color:var(--text);
+}
+.brand span{color:var(--accent);}
+
+.nav-links{
+  display:flex;
+  gap:34px;
+  list-style:none;
+  margin:0; padding:0;
+}
+.nav-links a{
+  font-size:14.5px;
+  color:var(--text-muted);
+  position:relative;
+  padding-bottom:3px;
+  transition:color .2s ease;
+}
+.nav-links a:hover{color:var(--text);}
+.nav-links a::after{
+  content:"";
+  position:absolute; left:0; bottom:0;
+  width:0; height:1px;
+  background:var(--accent);
+  transition:width .25s ease;
+}
+.nav-links a:hover::after{width:100%;}
+
+.navbar-toggler{border:1px solid var(--line); box-shadow:none !important;}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding-top:110px;
+  padding-bottom:70px;
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr 0.85fr;
+  gap:64px;
+  align-items:center;
+  width:100%;
+}
+.hero-tag{
+  font-family:var(--mono);
+  font-size:13.5px;
+  color:#9AACBB;
+  margin-bottom:22px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.hero-tag .dot{
+  width:6px; height:6px; border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 0 3px rgba(124,139,153,0.22);
+}
+.hero h1{
+  font-size:clamp(42px, 5vw, 68px);
+  line-height:1.04;
+  letter-spacing:-0.01em;
+  color:var(--text);
+}
+.hero h1 em{
+  font-style:italic;
+  color:#C7CBD1;
+  font-weight:400;
+}
+.hero p.lede{
+  font-size:18px;
+  color:#C7CBD1;
+  max-width:460px;
+  margin-top:24px;
+}
+.hero-cta{
+  display:flex;
+  gap:14px;
+  margin-top:38px;
+  flex-wrap:wrap;
+}
+.btn-line{
+  font-family:var(--sans);
+  font-size:14.5px;
+  font-weight:500;
+  padding:12px 22px;
+  border:1px solid var(--line);
+  border-radius:2px;
+  color:var(--text);
+  transition:border-color .2s ease, background .2s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+}
+.btn-line:hover{border-color:var(--accent); background:rgba(124,139,153,0.10); color:var(--text);}
+.btn-solid{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#1B1D21;
+  font-weight:600;
+}
+.btn-solid:hover{background:#95A3B0; border-color:#95A3B0; color:#1B1D21;}
+
+/* hero visual panel */
+.hero-visual{
+  position:relative;
+  aspect-ratio:4/5;
+  border:1px solid var(--line);
+  overflow:hidden;
+}
+.hero-visual::before{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(160deg, rgba(27,29,33,0.20) 0%, rgba(27,29,33,0.80) 100%);
+  z-index:2;
+}
+.hero-visual .carousel,
+.hero-visual .carousel-inner,
+.hero-visual .carousel-item{height:100%;}
+.hero-visual .carousel-item{
+  background-size:cover;
+  background-position:center;
+  filter:grayscale(35%) contrast(1.05);
+}
+.hero-visual-frame{
+  position:absolute;
+  bottom:16px; left:16px; right:16px;
+  z-index:3;
+  font-family:var(--mono);
+  font-size:12px;
+  color:#C7C9CC;
+  display:flex;
+  justify-content:space-between;
+  border-top:1px solid rgba(231,229,224,0.22);
+  padding-top:10px;
 }
 
-.hero-content h3{
-color:#64ffda;
-margin-top:15px;
+/* ===== SECTION SCAFFOLD ===== */
+.section{padding:120px 0;}
+.section-head{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:40px;
+  margin-bottom:56px;
+  align-items:baseline;
+}
+.section-label{
+  font-family:var(--mono);
+  font-size:13px;
+  color:var(--text-faint);
+}
+.section-head h2{
+  font-size:clamp(28px,3vw,38px);
+  color:var(--text);
 }
 
-.hero-content p{
-margin-top:20px;
-font-size:18px;
-max-width:500px;
+/* ===== ABOUT ===== */
+.about-body{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:40px;
+}
+.about-text{
+  max-width:640px;
+  font-size:17px;
+  color:var(--text-muted);
+}
+.about-text p{margin-bottom:20px;}
+.pull{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:22px;
+  color:var(--text);
+  border-left:2px solid var(--accent);
+  padding-left:20px;
+  margin:32px 0;
+  max-width:520px;
+}
+
+/* ===== SKILLS TICKER ===== */
+.skills-wrap{border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+.skills-row{overflow:hidden; position:relative; border-bottom:1px solid var(--line-soft);}
+.skills-row:last-child{border-bottom:none;}
+.skills-track{
+  display:flex;
+  width:max-content;
+  animation:scrollLeft 42s linear infinite;
+}
+.skills-row.reverse .skills-track{animation-name:scrollRight;}
+@keyframes scrollLeft{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+@keyframes scrollRight{from{transform:translateX(-50%);} to{transform:translateX(0);}}
+
+.skill-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:22px 34px;
+  border-right:1px solid var(--line-soft);
+  white-space:nowrap;
+}
+.skill-item img{
+  height:22px; width:auto;
+  filter:grayscale(100%) brightness(1.5) contrast(0.9);
+  opacity:0.68;
+  transition:filter .2s ease, opacity .2s ease;
+}
+.skill-item:hover img{filter:none; opacity:1;}
+.skill-item span{
+  font-family:var(--mono);
+  font-size:13.5px;
+  color:var(--text-muted);
+}
+
+/* ===== EXPERIENCE TIMELINE ===== */
+.timeline{
+  position:relative;
+  max-width:760px;
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:9px; top:6px; bottom:6px;
+  width:1px;
+  background:var(--line);
+}
+.tl-item{
+  position:relative;
+  padding-left:44px;
+  margin-bottom:52px;
+}
+.tl-item:last-child{margin-bottom:0;}
+.tl-dot{
+  position:absolute; left:0; top:6px;
+  width:19px; height:19px;
+  border-radius:50%;
+  border:1px solid var(--accent);
+  background:var(--bg);
+}
+.tl-dot::after{
+  content:"";
+  position:absolute; inset:5px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.tl-item:not(.current) .tl-dot{border-color:var(--line);}
+.tl-item:not(.current) .tl-dot::after{background:var(--text-faint);}
+.tl-date{
+  font-family:var(--mono);
+  font-size:13px;
+  color:var(--text-faint);
+  margin-bottom:6px;
+}
+.tl-role{font-family:var(--serif); font-size:22px; color:var(--text); font-weight:600;}
+.tl-org{font-size:15px; color:var(--accent); margin-top:2px;}
+
+/* ===== PROJECTS ===== */
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1px;
+  background:var(--line-soft);
+  border:1px solid var(--line-soft);
+}
+.project-card{
+  background:var(--bg);
+  padding:0;
+  position:relative;
+  overflow:hidden;
+  transition:background .25s ease;
+}
+.project-card:hover{background:var(--bg-raised);}
+.project-img-wrap{
+  aspect-ratio:16/10;
+  overflow:hidden;
+  border-bottom:1px solid var(--line-soft);
+}
+.project-img-wrap img{
+  width:100%; height:100%; object-fit:cover;
+  filter:grayscale(55%);
+  transition:filter .3s ease, transform .4s ease;
+}
+.project-card:hover .project-img-wrap img{filter:grayscale(0%); transform:scale(1.03);}
+.project-body{padding:24px 26px 28px;}
+.project-num{font-family:var(--mono); font-size:12px; color:var(--text-faint); margin-bottom:10px;}
+.project-body h5{
+  font-family:var(--serif);
+  font-size:19px;
+  font-weight:600;
+  color:var(--text);
+  line-height:1.3;
+  margin-bottom:10px;
+}
+.project-desc{font-size:14.5px; color:var(--text-muted); margin:0;}
+
+/* ===== PUBLICATIONS ===== */
+.pub-list{max-width:820px;}
+.pub-item{
+  padding:34px 0;
+  border-bottom:1px solid var(--line-soft);
+}
+.pub-item:first-child{padding-top:0;}
+.pub-tag{
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--grey-accent);
+  margin-bottom:12px;
+}
+.pub-title{
+  font-family:var(--serif);
+  font-size:21px;
+  font-weight:600;
+  color:var(--text);
+  margin-bottom:14px;
+  max-width:640px;
+}
+.pub-abstract{
+  font-size:15.5px;
+  color:var(--text-muted);
+  max-width:680px;
+}
+
+/* ===== CONTACT ===== */
+.contact-wrap{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:40px;
+  align-items:center;
+}
+.contact-wrap h2{
+  font-size:clamp(34px,4vw,52px);
+  max-width:520px;
+}
+.contact-sub{color:var(--text-muted); font-size:16px; margin-top:18px; max-width:420px;}
+.contact-links{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  border-top:1px solid var(--line);
+}
+.contact-links a{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 4px;
+  border-bottom:1px solid var(--line);
+  font-size:15.5px;
+  color:var(--text);
+  transition:color .2s ease, padding-left .2s ease;
+}
+.contact-links a:hover{color:var(--accent); padding-left:10px;}
+.contact-links i{color:var(--text-faint); font-size:18px;}
+
+/* ===== FOOTER ===== */
+.footer{
+  padding:30px 0;
+  border-top:1px solid var(--line-soft);
+  font-family:var(--mono);
+  font-size:12.5px;
+  color:var(--text-faint);
+  text-align:center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991px){
+  .hero-grid{grid-template-columns:1fr; gap:44px;}
+  .hero-visual{aspect-ratio:16/9;}
+  .section-head, .about-body, .contact-wrap{grid-template-columns:1fr;}
+  .section-head{gap:14px;}
+  .project-grid{grid-template-columns:repeat(2,1fr);}
+  .nav-links{gap:20px;}
+}
+@media (max-width: 575px){
+  .project-grid{grid-template-columns:1fr;}
+  .section{padding:80px 0;}
+  .navbar-collapse{
+    background:var(--bg-raised);
+    margin-top:14px;
+    padding:14px;
+    border:1px solid var(--line);
+  }
+  .nav-links{flex-direction:column; gap:6px;}
+  .nav-links a{display:block; padding:8px 4px;}
 }
 
 </style>
-
 </head>
 
 <body>
 
-
 <!-- NAVBAR -->
-<!-- CENTERED NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top glass">
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container d-flex align-items-center justify-content-between">
 
-<div class="container">
+<a class="brand" href="#top">AV<span>.</span>&nbsp;Aryan Verma</a>
 
-<button class="navbar-toggler mx-auto"
-type="button"
-data-bs-toggle="collapse"
-data-bs-target="#nav">
-
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
 <span class="navbar-toggler-icon"></span>
-
 </button>
 
-<div class="collapse navbar-collapse justify-content-center" id="nav">
-
-<ul class="navbar-nav text-center">
-
-<li class="nav-item">
-<a class="nav-link px-4" href="#about">About</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link px-4" href="#skills">Skills</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link px-4" href="#experience">Experience</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link px-4" href="#projects">Projects</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link px-4" href="#publications">Publications</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link px-4" href="#contact">Contact</a>
-</li>
-
+<div class="collapse navbar-collapse flex-grow-0" id="nav">
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
-
 </div>
 
 </div>
-
 </nav>
 
+<!-- HERO -->
+<div id="top" class="hero">
+<div class="container hero-grid">
 
-<!-- HERO CAROUSEL -->
-<div id="heroCarousel" class="carousel slide carousel-fade"
-data-bs-ride="carousel"
-data-bs-interval="4000">
+<div>
+<div class="hero-tag"><span class="dot"></span> currently building at Nevaeh Technology</div>
 
+<h1>Aryan Verma<br><em>builds AI systems</em><br>that ship.</h1>
 
-<div class="carousel-inner">
-
-
-<!-- SLIDE 1 -->
-<div class="carousel-item active"
-style="background-image:url('me_again.png')">
-
-<div class="container hero-content">
-
-<h1>Hi, I'm Aryan Verma</h1>
-
-<h3>AI Engineer | Solo Traveller | Space Explorer</h3>
-
-<p>
-Building scalable AI systems powered by real-time data and cloud.
+<p class="lede">
+AI Engineer with expertise in developing scalable, real-time, cloud-native AI systems, from multimodal model integration to robust production data pipelines and intelligent applications.
 </p>
 
-<a href="https://github.com/ARYANVERMA893"
-class="btn btn-primary mt-3" target="_blank">
-
+<div class="hero-cta">
+<a href="https://github.com/ARYANVERMA893" class="btn-line btn-solid" target="_blank">
 <i class="bi bi-github"></i> View GitHub
-
 </a>
+<a href="#contact" class="btn-line">
+Get in touch
+</a>
+</div>
+</div>
 
+<div class="hero-visual">
+
+    <div id="heroCarousel" class="carousel slide"
+         data-bs-ride="carousel"
+         data-bs-interval="4500">
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active"
+                 style="background-image: url('my_photo.jpeg');">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-visual-frame">
+      <span>AI Engineer</span>
+    </div>
+
+</div>
 </div>
 
 </div>
-
-
-<!-- SLIDE 2 -->
-<div class="carousel-item"
-style="background-image:url('next_gen_ai.png')">
-
-<div class="container hero-content">
-
-<h1>Welcome to Next Generation AI Worlds</h1>
-
-<p>
-Building intelligent systems that redefine industries.
-</p>
-
 </div>
-
-</div>
-
-
-<!-- SLIDE 3 -->
-<div class="carousel-item"
-style="background-image:url('wolf.jpg')">
-
-<div class="container hero-content">
-
-<h1>Let's Bring Value to the Business</h1>
-
-<p>
-Transforming raw data into measurable business intelligence.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<!-- CONTROLS -->
-<button class="carousel-control-prev"
-type="button"
-data-bs-target="#heroCarousel"
-data-bs-slide="prev">
-
-<span class="carousel-control-prev-icon"></span>
-
-</button>
-
-
-<button class="carousel-control-next"
-type="button"
-data-bs-target="#heroCarousel"
-data-bs-slide="next">
-
-<span class="carousel-control-next-icon"></span>
-
-</button>
-
-</div>
-
-
 
 <!-- ABOUT -->
 <section id="about" class="section">
-
 <div class="container">
+<div class="section-head">
+<div class="section-label">01 / About</div>
+<h2>Systems, not demos.</h2>
+</div>
 
-<h2 class="section-title">About Me</h2>
-
-<p class="section-text">
-
-I am an AI Engineer specializing in designing and deploying real-time, scalable
- AI systems powered by cloud-native and distributed architectures. 
- My expertise spans multimodal AI, large language models, and intelligent
-  data pipelines built for production environments. I focus on transforming complex, 
-  high-volume data into actionable intelligence that drives measurable business outcomes. 
-  With hands-on experience in end-to-end system development, I build robust, efficient, 
-  and reliable AI solutions that operate effectively under real-world constraints.
-   My work is driven by the goal of delivering high-performance AI systems that create 
-   tangible value and operational advantage.
+<div class="about-body">
+<div></div>
+<div class="about-text">
+<p>
+I'm an AI Engineer specialising in designing and deploying real-time, scalable AI
+systems powered by cloud-native and distributed architectures. My work spans
+multimodal AI, large language models, and data pipelines built for production —
+not notebooks.
 </p>
 
+<p class="pull">
+I care less about what a model can do in isolation, and more about what it does
+reliably at 3am under real load.
+</p>
+
+<p>
+I focus on turning complex, high-volume data into decisions that hold up in
+production: robust, efficient, and reliable AI systems that operate under
+real-world constraints, not just benchmark conditions.
+</p>
+</div>
 </div>
 
+</div>
 </section>
-<section id="skills" class="section"></section>
-<h2 class="section-title">Skills</h2>
 
-<div class="skills-slider">
-
-<div class="skills-track track-left">
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
-<span>Python</span>
+<!-- SKILLS -->
+<section id="skills">
+<div class="section-head container" style="margin-bottom:0; padding-bottom:56px;">
+<div class="section-label">02 / Stack</div>
+<h2>Tools of the trade.</h2>
 </div>
 
-<div class="skill-item">
-  <img src="https://cdn.simpleicons.org/langchain/00A67E" alt="LangChain Logo" height="48">
-  <span>LangGraph</span>
+<div class="skills-wrap">
+
+<div class="skills-row">
+<div class="skills-track">
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><span>Python</span></div>
+<div class="skill-item"><img src="https://cdn.simpleicons.org/langchain/00A67E" alt="LangGraph"><span>LangGraph</span></div>
+<div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg"><span>Matplotlib</span></div>
+<div class="skill-item"><img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn"><span>Seaborn</span></div>
+<div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"><span>Scikit-learn</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"><span>Pandas</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"><span>NumPy</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"><span>TensorFlow</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"><span>PyTorch</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"><span>Docker</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"><span>Git</span></div>
+<div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Whisper"><span>OpenAI Whisper</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/microsoft/PowerBI-Icons@main/SVG/Power-BI.svg"><span>Power BI</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></div>
+<!-- duplicate for seamless loop -->
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><span>Python</span></div>
+<div class="skill-item"><img src="https://cdn.simpleicons.org/langchain/00A67E" alt="LangGraph"><span>LangGraph</span></div>
+<div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg"><span>Matplotlib</span></div>
+<div class="skill-item"><img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn"><span>Seaborn</span></div>
+<div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"><span>Scikit-learn</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"><span>Pandas</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"><span>NumPy</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"><span>TensorFlow</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"><span>PyTorch</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"><span>Docker</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"><span>Git</span></div>
+<div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Whisper"><span>OpenAI Whisper</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/microsoft/PowerBI-Icons@main/SVG/Power-BI.svg"><span>Power BI</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></div>
+</div>
 </div>
 
-
-<div class="skill-item">
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg">
-<span>Matplotlib</span>
+<div class="skills-row reverse">
+<div class="skills-track">
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg"><span>Kafka</span></div>
+<div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Deep Learning"><span>Deep Learning</span></div>
+<div class="skill-item"><img src="https://cdn.simpleicons.org/langchain/00A67E" alt="LangChain"><span>LangChain</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg"><span>PySpark</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"><span>FastAPI</span></div>
+<div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/d/de/AirflowLogo.png"><span>Airflow</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"><span>MySQL</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"><span>MongoDB</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"><span>Apache</span></div>
+<div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg"><span>OpenAI</span></div>
+<div class="skill-item"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"><span>HuggingFace</span></div>
+<div class="skill-item"><img src="https://img.icons8.com/color/48/artificial-intelligence.png" alt="NLP"><span>NLP</span></div>
+<div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg" alt="Microsoft 365"><span>Microsoft 365</span></div>
+<!-- duplicate for seamless loop -->
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg"><span>Kafka</span></div>
+<div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Deep Learning"><span>Deep Learning</span></div>
+<div class="skill-item"><img src="https://cdn.simpleicons.org/langchain/00A67E" alt="LangChain"><span>LangChain</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg"><span>PySpark</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"><span>FastAPI</span></div>
+<div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/d/de/AirflowLogo.png"><span>Airflow</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"><span>MySQL</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"><span>MongoDB</span></div>
+<div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"><span>Apache</span></div>
+<div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg"><span>OpenAI</span></div>
+<div class="skill-item"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"><span>HuggingFace</span></div>
+<div class="skill-item"><img src="https://img.icons8.com/color/48/artificial-intelligence.png" alt="NLP"><span>NLP</span></div>
+<div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg" alt="Microsoft 365"><span>Microsoft 365</span></div>
 </div>
-<div class="skill-item">
-  <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn Logo" height="48">
-  <span>Seaborn</span>
-</div>
-
-
-<div class="skill-item">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg">
-<span>Scikit-learn</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg">
-<span>Pandas</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg">
-<span>NumPy</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg">
-<span>TensorFlow</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg">
-<span>PyTorch</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
-<span>Docker</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
-<span>Git</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/microsoft/PowerBI-Icons@main/SVG/Power-BI.svg">
-<span>Power BI</span>
-</div>
-<div class="skill-item">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
-  <span>AWS</span>
-</div>
-
-
-<!-- DUPLICATE SAME SET AGAIN (REQUIRED FOR LOOP) -->
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
-<span>Python</span>
-</div>
-
-<div class="skill-item">
-  <img src="https://cdn.simpleicons.org/langchain/00A67E" alt="LangChain Logo" height="48">
-  <span>LangGraph</span>
-</div>
-
-<div class="skill-item">
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg">
-<span>Matplotlib</span>
-</div>
-<div class="skill-item">
-  <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn Logo" height="48">
-  <span>Seaborn</span>
-</div>
-
-
-<div class="skill-item">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg">
-<span>Scikit-learn</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg">
-<span>Pandas</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg">
-<span>NumPy</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg">
-<span>TensorFlow</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg">
-<span>PyTorch</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
-<span>Docker</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
-<span>Git</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/microsoft/PowerBI-Icons@main/SVG/Power-BI.svg">
-<span>Power BI</span>
-</div>
-
-<div class="skill-item">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
-  <span>AWS</span>
 </div>
 
 </div>
+</section>
 
-</div>
-
-<!-- ROW 2 -->
-<div class="skills-slider mt-4">
-
-<div class="skills-track track-right">
-
-<!-- ORIGINAL SET -->
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg">
-<span>Kafka</span>
-</div>
-
-<div class="skill-item">
-  <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Neural Network Logo" height="48">
-  <span>Deep Learning</span>
-</div>
-
-
-
-<div class="skill-item">
-  <img src="https://cdn.simpleicons.org/langchain/00A67E" alt="LangChain Logo" height="48">
-  <span>LangChain</span>
-</div>
-
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg">
-<span>PySpark</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg">
-<span>FastAPI</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
-<span>MySQL</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
-<span>MongoDB</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg">
-<span>Apache</span>
-</div>
-
-<div class="skill-item">
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg">
-<span>OpenAI</span>
-</div>
-
-<div class="skill-item">
-<img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg">
-<span>HuggingFace</span>
-</div>
-
-<div class="skill-item">
-  <img src="https://img.icons8.com/color/48/artificial-intelligence.png" alt="NLP">
-  <span>NLP</span>
-</div>
-
-<div class="skill-item">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg" alt="Microsoft 365 Logo" height="48">
-  <span>Microsoft 365</span>
-</div>
-
-<!-- DUPLICATE SAME SET AGAIN FOR LOOP -->
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg">
-<span>Kafka</span>
-</div>
-
-<div class="skill-item">
-  <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Neural Network Logo" height="48">
-  <span>Deep Learning</span>
-</div>
-
-
-<div class="skill-item">
-  <img src="https://cdn.simpleicons.org/langchain/00A67E" alt="LangChain Logo" height="48">
-  <span>LangChain</span>
-</div>
-
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg">
-<span>PySpark</span>
-</div>
-
-
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg">
-<span>FastAPI</span>
-</div>
-
-<div class="skill-item">
-<img src="https://upload.wikimedia.org/wikipedia/commons/d/de/AirflowLogo.png">
-<span>Airflow</span>
-</div>
-
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
-<span>MySQL</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
-<span>MongoDB</span>
-</div>
-
-<div class="skill-item">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg">
-<span>Apache</span>
-</div>
-
-<div class="skill-item">
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg">
-<span>OpenAI</span>
-</div>
-
-<div class="skill-item">
-<img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg">
-<span>HuggingFace</span>
-</div>
-
-<div class="skill-item">
-  <img src="https://img.icons8.com/color/48/artificial-intelligence.png" alt="NLP">
-  <span>NLP</span>
-</div>
-
-
-<div class="skill-item">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg" alt="Microsoft 365 Logo" height="48">
-  <span>Microsoft 365</span>
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- EXPERIENCE SECTION -->
+<!-- EXPERIENCE -->
 <section id="experience" class="section">
-
 <div class="container">
+<div class="section-head">
+<div class="section-label">03 / Experience</div>
+<h2>Where I've worked.</h2>
+</div>
 
-<h2 class="section-title text-center mb-5">Experience</h2>
+<div class="timeline">
 
-<div class="row justify-content-center">
+<div class="tl-item current">
+<div class="tl-dot"></div>
+<div class="tl-date">22 June 2026 — Present</div>
+<div class="tl-role">Deep Learning Engineer</div>
+<div class="tl-org">Nevaeh Technology Pvt. Ltd.</div>
+</div>
 
+<div class="tl-item">
+<div class="tl-dot"></div>
+<div class="tl-date">28 May 2024 — 19 June 2026</div>
+<div class="tl-role">AI Engineer</div>
+<div class="tl-org">Tardid Technologies Pvt. Ltd.</div>
+</div>
 
-<!-- Tardid -->
-<div class="col-md-8 mb-4">
-
-<div class="experience-card d-flex align-items-center">
-
-<img src="Tardid_logo.jpg" class="experience-logo">
-
-<div class="ms-4">
-
-<h5 class="mb-1">AI Engineer</h5>
-
-<p class="mb-1 text-info">Tardid Technologies Pvt Ltd</p>
-
-<p class="experience-date mb-0">28 May 2024 – Present</p>
-
+<div class="tl-item">
+<div class="tl-dot"></div>
+<div class="tl-date">15 Nov 2023 — 15 Dec 2023</div>
+<div class="tl-role">Data Scientist Intern</div>
+<div class="tl-org">Oasis Infobyte</div>
 </div>
 
 </div>
-
 </div>
-
-
-<!-- Oasis -->
-<div class="col-md-8 mb-4">
-
-<div class="experience-card d-flex align-items-center">
-
-<img src="oasis_infobyte_logo.jpg" class="experience-logo">
-
-<div class="ms-4">
-
-<h5 class="mb-1">Data Scientist Intern</h5>
-
-<p class="mb-1 text-info">Oasis Infobyte</p>
-
-<p class="experience-date mb-0">15 Nov 2023 – 15 Dec 2023</p>
-
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
 
-
-<!-- PROJECTS SECTION -->
+<!-- PROJECTS -->
 <section id="projects" class="section">
-
 <div class="container">
+<div class="section-head">
+<div class="section-label">04 / Projects</div>
+<h2>Selected work.</h2>
+</div>
 
-<h2 class="section-title text-center mb-5">Projects</h2>
+<div class="project-grid">
 
-<div class="row">
-
-
-<div class="col-md-4 mb-4">
 <div class="project-card">
-
-<img src="p1.png" class="project-img">
-
-<h5 class="mt-3">Hazard Asteroid Intelligence</h5>
-
-<p class="project-desc">
-</p>
-
+<div class="project-img-wrap"><img src="p1.png" alt="Hazard Asteroid Intelligence Pipeline"></div>
+<div class="project-body">
+<div class="project-num">01</div>
+<h5>Hazard Asteroid Intelligence Pipeline</h5>
+<p class="project-desc">Real-time pipeline that ingests near-Earth object data, models trajectory risk, and flags potentially hazardous asteroids ahead of manual review.</p>
 </div>
 </div>
 
-
-<!-- PROJECT 2 -->
-<div class="col-md-4 mb-4">
 <div class="project-card">
-
-<img src="p2.png" class="project-img">
-
-<h5 class="mt-3">Autonomous Cyber Threat Hunter</h5>
-
-<p class="project-desc">
-</p>
-
+<div class="project-img-wrap"><img src="p2.png" alt="Autonomous Cyber Threat Hunter"></div>
+<div class="project-body">
+<div class="project-num">02</div>
+<h5>Autonomous Cyber Threat Hunter</h5>
+<p class="project-desc">An agent that monitors network telemetry, correlates anomalies against known attack patterns, and triages threats without waiting on a human in the loop.</p>
 </div>
 </div>
 
-
-<!-- PROJECT 3 -->
-<div class="col-md-4 mb-4">
 <div class="project-card">
-
-<img src="p3.png" class="project-img">
-
-<h5 class="mt-3">Particle-Based Causal AI with Confidence-Driven Decision Intelligence</h5>
-
-<p class="project-desc">
-</p>
-
+<div class="project-img-wrap"><img src="p3.png" alt="Particle-Based Causal AI"></div>
+<div class="project-body">
+<div class="project-num">03</div>
+<h5>Particle-Based Causal AI with Confidence-Driven Decision Intelligence</h5>
+<p class="project-desc">A causal inference engine that estimates the confidence behind every recommendation it makes, not just the recommendation itself.</p>
 </div>
 </div>
 
-
-<!-- PROJECT 4 -->
-<div class="col-md-4 mb-4">
 <div class="project-card">
-
-<img src="p4.png" class="project-img">
-
-<h5 class="mt-3">AURA – Autonomous User Response Assistant</h5>
-
-<p class="project-desc">
-</p>
-
+<div class="project-img-wrap"><img src="p4.png" alt="AURA"></div>
+<div class="project-body">
+<div class="project-num">04</div>
+<h5>AURA — Autonomous User Response Assistant</h5>
+<p class="project-desc">Reads context across a conversation and drafts replies calibrated to tone, urgency, and prior history.</p>
 </div>
 </div>
 
-
-<!-- PROJECT 5 -->
-<div class="col-md-4 mb-4">
 <div class="project-card">
-
-<img src="p5.png" class="project-img">
-
-<h5 class="mt-3">HealthCare ChatBot</h5>
-
-<p class="project-desc">
-</p>
-
+<div class="project-img-wrap"><img src="p5.png" alt="HealthCare ChatBot"></div>
+<div class="project-body">
+<div class="project-num">05</div>
+<h5>HealthCare ChatBot</h5>
+<p class="project-desc">A symptom-triage assistant that helps patients understand likely next steps in plain language before they see a doctor.</p>
 </div>
 </div>
 
-
-<!-- PROJECT 6 -->
-<div class="col-md-4 mb-4">
 <div class="project-card">
-
-<img src="p6.png" class="project-img">
-
-<h5 class="mt-3">Movie Recommender System</h5>
-
-<p class="project-desc">
-</p>
-
+<div class="project-img-wrap"><img src="kyro.png" alt="Algorithmic Trading OS"></div>
+<div class="project-body">
+<div class="project-num">06</div>
+<h5>Algorithmic Trading OS</h5>
+<p class="project-desc">Execution system that turns strategy signals into orders, with risk controls and backtesting built into the same pipeline.</p>
 </div>
 </div>
 
-
 </div>
-
 </div>
-
 </section>
 
-<!-- PUBLICATIONS SECTION -->
+<!-- PUBLICATIONS -->
 <section id="publications" class="section">
-
 <div class="container">
+<div class="section-head">
+<div class="section-label">05 / Publications</div>
+<h2>Writing &amp; research.</h2>
+</div>
 
-<h2 class="section-title text-center mb-5">Publications</h2>
+<div class="pub-list">
 
-<div class="row">
-
-
-<!-- PUBLICATION 1 -->
-<div class="col-md-6 mb-4">
-
-<div class="publication-card">
-
-<h5 class="publication-title">
-Replacing Human Workers with Robots in Hazardous and Deadly Chemical Factory Environments
-</h5>
-
-<p class="publication-abstract">
-
-The dangerous chemical factory environment poses risks of toxic exposure, extreme thermal conditions, volatile reactions, and invisible airborne hazards to human labor. This paper describes an AI-based robotic system framework to replace human labor in high-risk industrial environments by facilitating safe and reliable autonomous operations under highly constrained and unpredictable conditions.
-
-A real-time sensor fusion system with vision, gas, and proximity sensors improves situational awareness to monitor toxic leaks and dynamic hazards in real-time, facilitating adaptive and safe autonomous operation.
-
+<div class="pub-item">
+<div class="pub-tag">Robotics / Industrial Safety</div>
+<h5 class="pub-title">Replacing Human Workers with Robots in Hazardous and Deadly Chemical Factory Environments</h5>
+<p class="pub-abstract">
+The dangerous chemical factory environment poses risks of toxic exposure, extreme
+thermal conditions, volatile reactions, and invisible airborne hazards to human
+labor. This paper describes an AI-based robotic system framework to replace human
+labor in high-risk industrial environments by facilitating safe and reliable
+autonomous operations under highly constrained and unpredictable conditions. A
+real-time sensor fusion system with vision, gas, and proximity sensors improves
+situational awareness to monitor toxic leaks and dynamic hazards, enabling adaptive,
+safe autonomous operation.
 </p>
-
 </div>
 
-</div>
-
-
-
-<!-- PUBLICATION 2 -->
-<div class="col-md-6 mb-4">
-
-<div class="publication-card">
-
-<h5 class="publication-title">
-Smart Disaster Alert System Powered by Retrieval-Augmented Large Language Models and Real-Time Intelligence Pipelines
-</h5>
-
-<p class="publication-abstract">
-
-This paper proposes a Smart Disaster Alert System that incorporates Retrieval-Augmented Generation (RAG) and Large Language Model (LLM) designs to provide smart, real-time detection and notification of disasters.
-
-The framework utilizes Apache Kafka, PySpark, and AWS S3 for real-time data processing. Integration of RAG search with LLM summarization enables extraction of situational insights and delivery of context-aware alerts, achieving a 40% reduction in response time.
-
+<div class="pub-item">
+<div class="pub-tag">LLMs / Real-Time Systems</div>
+<h5 class="pub-title">Smart Disaster Alert System Powered by Retrieval-Augmented Large Language Models and Real-Time Intelligence Pipelines</h5>
+<p class="pub-abstract">
+This paper proposes a Smart Disaster Alert System that incorporates
+Retrieval-Augmented Generation (RAG) and Large Language Model (LLM) design to
+provide real-time detection and notification of disasters. The framework uses
+Apache Kafka, PySpark, and AWS S3 for real-time data processing. Integrating RAG
+search with LLM summarisation enables extraction of situational insight and
+delivery of context-aware alerts, achieving a 40% reduction in response time.
 </p>
-
 </div>
 
 </div>
-
-
 </div>
-
-</div>
-
 </section>
-
 
 <!-- CONTACT -->
- <!-- CONTACT SECTION -->
-<section id="contact" class="section text-center">
-
+<section id="contact" class="section">
 <div class="container">
 
-<h2 class="section-title mb-4">Contact</h2>
-
-<p class="mb-4" style="color:#8892b0;">
-Feel free to reach out for collaborations, opportunities, or discussions.
+<div class="contact-wrap">
+<div>
+<div class="section-label" style="margin-bottom:18px;">06 / Contact</div>
+<h2>Open to opportunities in the Netherlands and the wider EU.</h2>
+<p class="contact-sub">
+Reach out for roles, collaborations, or just to talk about applied AI systems.
 </p>
-
-<!-- EMAIL -->
-<a href="mailto:aryanv7717@gmail.com"
-class="btn btn-primary m-2">
-
-<i class="bi bi-envelope-fill"></i>
-aryanv7717@gmail.com
-
-</a>
-
-<!-- GITHUB -->
-<a href="https://github.com/ARYANVERMA893"
-class="btn btn-outline-info m-2"
-target="_blank">
-
-<i class="bi bi-github"></i>
-GitHub
-
-</a>
-
-<!-- LINKEDIN -->
-<a href="https://www.linkedin.com/in/aryan-verma-367190203/"
-class="btn btn-outline-light m-2"
-target="_blank">
-
-<i class="bi bi-linkedin"></i>
-LinkedIn
-
-</a>
-<!-- INSTAGRAM -->
-<a href="https://www.instagram.com/aryanve_rma?igsh=MTZ5MHo0azI2MW5mbA=="
-class="btn btn-outline-light m-2"
-target="_blank">
-
-<i class="bi bi-instagram"></i>
-Instagram
-
-</a>
-
 </div>
 
+<div class="contact-links">
+<a href="mailto:aryanv7717@gmail.com"><span>aryanv7717@gmail.com</span> <i class="bi bi-arrow-up-right"></i></a>
+<a href="https://github.com/ARYANVERMA893" target="_blank"><span>GitHub</span> <i class="bi bi-github"></i></a>
+<a href="https://www.linkedin.com/in/aryan-verma-367190203/" target="_blank"><span>LinkedIn</span> <i class="bi bi-linkedin"></i></a>
+<a href="https://www.instagram.com/aryanve_rma?igsh=MTZ5MHo0azI2MW5mbA==" target="_blank"><span>Instagram</span> <i class="bi bi-instagram"></i></a>
+</div>
+</div>
+
+</div>
 </section>
 
-
-
 <footer class="footer">
-© 2026 Aryan Verma | AI Engineer
+© 2026 Aryan Verma — AI Engineer
 </footer>
 
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
-
-
-
-
-
-
-
